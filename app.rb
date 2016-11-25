@@ -34,7 +34,14 @@ enable :sessions
    end
 
    get '/victory' do
-     
+     @game = $game
+     @active_player = @game.active_player
+     @inactive_player = @game.inactive_player
+     if @game.victory
+       erb(:victory)
+     else
+       redirect to('/play')
+     end
    end
 
   run! if app_file == $0

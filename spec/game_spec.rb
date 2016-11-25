@@ -31,7 +31,7 @@ describe Game do
   describe "victory" do
     it "should end the game" do
       allow(player2).to receive(:dead?) { true }
-      expect(game.victory).to eq player1
+      expect(game.victory).to eq true
     end
   end
 end

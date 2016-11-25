@@ -14,7 +14,7 @@ class Game
   end
 
   def victory
-    return active_player if inactive_player.dead?
+    inactive_player.dead?
   end
 
   def active_player
