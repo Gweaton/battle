@@ -23,16 +23,17 @@ class Game
     return self.player2 if !player2_active?
   end
 
+  def switch_active_player
+    self.player1.switch_status
+    self.player2.switch_status
+  end
+
+  private
   def player1_active?
     self.player1.active
   end
 
   def player2_active?
     self.player2.active
-  end
-
-  def switch_active_player
-    self.player1.switch_status
-    self.player2.switch_status
   end
 end
