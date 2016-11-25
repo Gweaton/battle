@@ -27,6 +27,8 @@ enable :sessions
 
    get '/attack' do
      @game = $game
+     @active_player = @game.active_player
+     @inactive_player = @game.inactive_player
      @game.attack(@game.inactive_player)
      erb(:attack)
    end

@@ -8,3 +8,8 @@ end
 def attack
   click_button "Attack"
 end
+
+def round_one_complete
+  click_button("Attack Russell")
+  click_button("Ok, back to battle!")
+end
