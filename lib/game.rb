@@ -13,6 +13,10 @@ class Game
     attacked.lose_hp(number)
   end
 
+  def victory
+    return active_player if inactive_player.dead?
+  end
+
   def active_player
     return self.player1 if player1_active?
     return self.player2 if player2_active?

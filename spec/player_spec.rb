@@ -20,6 +20,11 @@ describe Player do
     expect(player.active).to be false
   end
 
+  it "can die" do
+      player.lose_hp(Player::DEFAULT_HP)
+      expect(player.dead?).to be true
+  end
+
   describe "#switch_status" do
     it "should switch a player's status from active to inactive" do
       player.active = true

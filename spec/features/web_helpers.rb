@@ -13,3 +13,9 @@ def round_one_complete
   click_button("Attack Russell")
   click_button("Ok, back to battle!")
 end
+
+def both_turns_complete
+  round_one_complete
+  click_button("Attack George")
+  click_button("Ok, back to battle!")
+end

@@ -20,7 +20,12 @@ class Player
   def check_status
     self.active
   end
+  
+  def dead?
+    self.hp <= 0
+  end
 
   private
   attr_writer :hp
+
 end

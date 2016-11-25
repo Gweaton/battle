@@ -28,4 +28,10 @@ describe Game do
       expect(game.inactive_player).to eq game.player2
     end
   end
+  describe "victory" do
+    it "should end the game" do
+      allow(player2).to receive(:dead?) { true }
+      expect(game.victory).to eq player1
+    end
+  end
 end

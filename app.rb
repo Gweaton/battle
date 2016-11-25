@@ -33,6 +33,10 @@ enable :sessions
      erb(:attack)
    end
 
+   get '/victory' do
+     
+   end
+
   run! if app_file == $0
 
 end
