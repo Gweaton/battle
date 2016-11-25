@@ -6,16 +6,21 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    self.player1.switch_status
+    self.player2.switch_status
   end
 
   def attack(attacked, number = 10)
     attacked.lose_hp(number)
   end
 
-  def show_active_player
+  def active_player
     return self.player1 if player1_active?
     return self.player2 if player2_active?
+  end
+
+  def inactive_player
+    return self.player1 if !player1_active?
+    return self.player2 if !player2_active?
   end
 
   def player1_active?

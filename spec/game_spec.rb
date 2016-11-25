@@ -30,7 +30,12 @@ describe Game do
   end
   describe "active_player" do
     it "should return the active player" do
-      expect(game.show_active_player).to eq game.player1
+      expect(game.active_player).to eq game.player1
+    end
+  end
+  describe "inactive player" do
+    it "should return the inactive player" do
+      expect(game.inactive_player).to eq game.player2
     end
   end
 end
