@@ -17,14 +17,16 @@ enable :sessions
     redirect to('/player1_turn')
   end
 
-  get '/player1_turn' do
+  get '/play' do
     @game = $game
-    erb(:player1_turn)
+    @active_player = 1
+    @inactive_player = 2
+    erb(:play)
   end
 
    get '/player1_attack' do
      @game = $game
-     @game.attack(@game.player2)
+     @game.attack(@game.player2) #attack active player
      erb(:player1_attack)
    end
 

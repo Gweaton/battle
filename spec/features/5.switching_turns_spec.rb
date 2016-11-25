@@ -3,15 +3,17 @@ require './app'
 RSpec.feature "Switching turns", :type => :feature do
   before do
     sign_in_and_play
-    attack
+  end
+  scenario "player1's turn" do
+    expect(page).to have_text("George's turn:")
+  end
+  scenario "player1's attack" do
+    click_button("Attack Russell")
+    expect(page).to have_text("You have administered a slap round the chops to Russell!")
+  end
+  scenario "player2's turn" do
+    click_button("Attack Russell")
     click_button("Ok, back to battle!")
-  end
-  scenario "Player 2's turn" do
-    expect(page).to have_text("#{$game.player1.hp} HP")
-  end
-
-  scenario "Attacking player 1 reduces his/her HP by 10" do
-    attack
-    expect($game.player1.hp).to eq(Player::DEFAULT_HP - 10)
+    expect(page).to have_text("Russell's turn:")
   end
 end

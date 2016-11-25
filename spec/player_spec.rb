@@ -15,4 +15,26 @@ describe Player do
     player.lose_hp(10)
     expect(player.hp).to eq(Player::DEFAULT_HP - 10)
   end
+
+  it "should initialize with an inactive status" do
+    expect(player.active).to be false
+  end
+
+  describe "#switch_status" do
+    it "should switch a player's status from active to inactive" do
+      player.active = true
+      player.switch_status
+      expect(player.active).to eq false
+    end
+    it "should set a player's status from inactive to active" do
+      player.switch_status
+      expect(player.active).to eq true
+    end
+  end
+  describe "#check_status" do
+    it "should show the player's status" do
+      player.active = true
+      expect(player.check_status).to eq true
+    end
+  end
 end
